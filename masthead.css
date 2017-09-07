@@ -38,7 +38,7 @@
   text-align: left;
   max-width: 100%;
   color: #fff;
-  text-shadow: 0 0 1.5em black;
+  text-shadow: 0 0 0.5em black;
   padding: 0;
   margin: 0;
 }
@@ -57,6 +57,49 @@
 .masthead-content.animated.fadeInUp {
   position: relative;
   transform: translateY(-50%);
+}
+
+.callout-overlay {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  min-width: 420px;
+  width: 420px;
+}
+
+.callout-content {
+  margin: auto 0;
+  padding: 0 40px;
+  text-align: left
+}
+
+.callout-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.callout-btn {
+  border-radius: 12px;
+  display: inline-block;
+  padding: 14px 24px;
+  text-transform: uppercase;
+  transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -webkit-transition: all .1s ease-in-out;
+  margin: 0 10px 10px 0;
+}
+
+.primary-btn {
+  border: 2px solid #2F99C4;
+  background-color: #2F99C4;
+}
+
+.secondary-btn {
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
 }
 
 @media only screen and (max-width: 413px) {
@@ -97,19 +140,27 @@
 
 @media only screen and (min-width: 1024px) {
   .masthead-image .inner {
-    height: 370px
+    height: 370px;
+  }
+  .callout-overlay {
+    min-width: 370px;
+    width: 370px
   }
 }
 
 @media only screen and (min-width: 1280px) {
   .masthead-image .inner {
-    height: 420px
+    height: 420px;
+  }
+  .callout-overlay {
+    min-width: 420px;
+    width: 420px
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .masthead-image .inner {
-    height: 420px
+    height: 420px;
   }
   h1 {
     font-size: 80px;
