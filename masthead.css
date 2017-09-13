@@ -1,3 +1,14 @@
+.masthead-container {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  padding: 0 5%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+}
+
 .masthead-image {
   background-size: cover;
   background-position: 50%;
@@ -17,28 +28,17 @@
   opacity: 0.1;
 }
 
-.masthead-image .inner {
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  -webkit-align-items: center;
-  justify-content: center;
-  -webkit-justify-content: center;
-  -webkit-box-align: center;
-}
-
 .masthead-image h1:before {
   background-color: transparent;
 }
 
-.masthead-image h1,
-.masthead-image h2 {
+.masthead-image h1, .masthead-image h2 {
   text-transform: none;
   margin-top: 0;
   text-align: left;
   max-width: 100%;
   color: #fff;
-  text-shadow: 0 0 0.5em black;
+  text-shadow: 0 0 0.3em black;
   padding: 0;
   margin: 0;
 }
@@ -46,7 +46,8 @@
 .masthead-image h1 span {
   font-family: 'Muller', 'Helvetica Neue', Helvetica, sans-serif;
   background-color: transparent;
-  padding: 0px 0px 20px 0;
+  padding: 0px 0px 10px 0;
+  line-height: 0.9;
 }
 
 .masthead-image h2 {
@@ -54,22 +55,39 @@
   font-weight: 500;
 }
 
+.masthead-image .masthead-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  padding-right: 30px;
+}
+
 .masthead-content.animated.fadeInUp {
   position: relative;
-  transform: translateY(-50%);
 }
 
 .callout-overlay {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.6);
-  min-width: 420px;
   width: 420px;
 }
 
 .callout-content {
   margin: auto 0;
   padding: 0 40px;
-  text-align: left
+  text-align: left;
+  position: relative;
+}
+
+.callout-content h3 {
+  color: #fff;
+  text-shadow: 0 0 0.3em black;
+  margin: 0 0 10px;
 }
 
 .callout-text {
@@ -79,6 +97,7 @@
   line-height: 1.5;
   margin-bottom: 30px;
   display: inline-block;
+  text-shadow: 0 0 0.3em black;
 }
 
 .callout-btn {
@@ -90,11 +109,22 @@
   -moz-transition: all .1s ease-in-out;
   -webkit-transition: all .1s ease-in-out;
   margin: 0 10px 10px 0;
+  box-shadow: 0 0 0.3em black;
+  text-align: center;
+}
+
+.btn-container {
+  display: inline;
 }
 
 .primary-btn {
-  border: 2px solid #2F99C4;
+  border: 1px solid #2F99C4;
   background-color: #2F99C4;
+}
+
+.primary-btn:hover {
+  border: 1px solid #1868AA;
+  background-color: #1868AA;
 }
 
 .secondary-btn {
@@ -102,71 +132,154 @@
   background-color: transparent;
 }
 
+.secondary-btn:hover {
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1.5px #FFFFFF;
+}
+
+.multi-callout {
+  text-align: center;
+  width: 100%;
+}
+
+.multi-callout h3 {
+  color: #fff;
+  letter-spacing: -1px;
+  font-size: 36px;
+  line-height: 0.9;
+  margin: 0 0 20px 0;
+}
+
+.multi-callout .callout-btn {
+  width: 150px;
+  height: 17px;
+  margin: 5px;
+  padding: 15px 0;
+  vertical-align: middle;
+}
+
+.multi-callout .multi-line-btn {
+  line-height: 1.1;
+  padding: 6px 0;
+  height: 35px;
+}
+
 @media only screen and (max-width: 413px) {
-  h1 {
-    font-size: 40px;
+  .masthead-image h1 {
+    font-size: 44px;
     letter-spacing: -1px;
   }
-  h2 {
-    font-size: 18px;
+  .masthead-image h2 {
+    font-size: 20px;
+  }
+  .callout-btn {
+    padding: 14px 0;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 10px;
+  }
+  .multi-callout .callout-btn {
+    padding: 14px 0;
+    width: 100%;
+    margin: 0 0 10px;
+  }
+  .masthead-image .masthead-content {
+    width: auto;
   }
 }
 
 @media only screen and (min-width: 414px) {
-  h1 {
-    font-size: 40px;
+  .masthead-image h1 {
+    font-size: 44px;
     letter-spacing: -1px;
   }
-  h2 {
+  .masthead-image h2 {
     font-size: 24px;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .masthead-image .inner {
+  .masthead-container {
     height: 270px
+  }
+  .masthead-image h1 span {
+    padding: 0px 0px 20px 0;
   }
 }
 
 @media only screen and (max-width: 1439px) and (min-width: 768px) {
-  h1 {
+  .masthead-image h1 {
     font-size: 60px;
     letter-spacing: -2px;
   }
-  h2 {
+  .masthead-image h2 {
     font-size: 28px;
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  .masthead-image .inner {
+@media only screen and (max-width: 1023px) {
+  .masthead-container {
+    height: auto;
+    display: inline-block;
+    padding: 0;
+    width: 100%;
+  }
+  .masthead-content.animated.fadeInUp {
+    padding: 40px 5%;
+  }
+  .callout-overlay {
+    width: 100%;
+    height: auto;
+  }
+  .callout-content {
+    padding: 20px 5%;
+  }
+  .multi-callout {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 549px) and (max-width: 1023px) {
+  .btn-container {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  .masthead-container {
     height: 370px;
   }
   .callout-overlay {
+    height: 370px;
+    width: 370px;
     min-width: 370px;
-    width: 370px
+  }
+  .multi-callout .callout-btn {
+    width: 130px;
   }
 }
 
 @media only screen and (min-width: 1280px) {
-  .masthead-image .inner {
+  .masthead-container {
     height: 420px;
   }
   .callout-overlay {
+    height: 420px;
+    width: 420px;
     min-width: 420px;
-    width: 420px
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .masthead-image .inner {
+  .masthead-container {
     height: 420px;
   }
-  h1 {
+  .masthead-image h1 {
     font-size: 80px;
     letter-spacing: -3px;
   }
-  h2 {
+  .masthead-image h2 {
     font-size: 36px;
   }
 }
